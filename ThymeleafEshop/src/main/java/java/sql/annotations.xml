@@ -1,0 +1,8 @@
+<root>
+    <item name='java.sql.ResultSet boolean getBoolean(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val name="value" val="&quot;!null -&gt; true&quot;"/>
+            <val name="pure" val="true"/>
+        </annotation>
+    </item>
+</root>

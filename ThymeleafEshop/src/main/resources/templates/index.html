@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eshop</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div align="center">
+    <h1><strong>Product list</strong></h1>
+
+    <h2><a th:href="@{/addnew}">Add Product</a></h2>
+      <br>
+
+
+    <h3>
+        <table>
+            <tr>
+                <th style="color: blue">Part Number</th>
+                <th style="color: blue">Name</th>
+                <th style="color: blue">Description</th>
+                <th style="color: blue">IsForSale</th>
+                <th style="color: blue">Price</th>
+                <th style="color: blue">Actions</th>
+            </tr>
+            </p>
+            <tr th:each="product:${allprolist}">
+                <td align="center" th:text="${product.partNumber}"></td>
+                <td align="center" th:text="${product.name}"></td>
+                <td align="center" th:text="${product.description}"></td>
+                <td align="center">
+                    <span  th:if="${product.forSale == true}" th:text="Yes" style="color:green"></span>
+                    <span  th:unless="${product.forSale == true}" th:text="No" style="color:red"></span>
+                </td>
+                <td align="center" th:text="${product.price}"></td>
+                  <td>
+                    <a align="center" th:href="@{/showFormForUpdate/{id}(id=${product.id})}">Update</a>
+                    <a align="center" th:href="@{/deleteProduct/{id}(id=${product.id})}">Delete</a>
+                </td>
+
+            </tr>
+        </table>
+    </h3>
+
+    <a href="https://www.engeto.cz/prehled-kurzu/">This is a link to Engeto</a>
+    <div class="cleaner"></div>
+   <div id="paticka">
+        <h2>
+            <p>2023 Jaroslav Kukľa</p>
+        </h2>
+    </div>
+</div>
+</body>
+</html>

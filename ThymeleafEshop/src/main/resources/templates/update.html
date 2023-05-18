@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+</head>
+<body>
+<div align="center">
+<h1>Update Product</h1>
+
+<form action="#" th:action="@{/update}" th:object="${product}" method="POST">
+
+    <!-- Add hidden form field to handle update -->
+    <input type="hidden" th:field="*{id}" />
+    <div class="form-attribut">
+        <label for="partNumber">PartNumber</label>
+        <input type="text" th:field="*{partNumber}" placeholder="Product PartNumber">
+        <div class="alert-warning"  th:if="${#fields.hasErrors('partNumber')}" th:errors="*{partNumber}"></div>
+    </div>
+    <div class="form-attribut">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" placeholder="Product Name">
+        <div class="alert-warning"  th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    </div>
+    <div class="form-attribut">
+        <label for="description">Description</label>
+        <input type="text" th:field="*{description}" placeholder="Product Description">
+        <div class="alert-warning"  th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+    </div>
+    <div class="form-attribut">
+        <label for="isForSale">IsForSale</label>
+        <input type="text" th:field="*{forSale}" placeholder="Product IsForSale">
+        <div class="alert-warning"  th:if="${#fields.hasErrors('forSale')}" th:errors="*{forSale}"></div>
+    </div>
+    <div class="form-attribut">
+        <label for="price">Price</label>
+        <input type="text" th:field="*{price}" value="55">
+        <div class="alert-warning"  th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+    </div>
+    <button type="submit">Update Product</button>
+</form>
+</div>
+</body>
+</html>

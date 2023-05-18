@@ -1,0 +1,1 @@
+vytvoøil Jaroslav Kuk¾a
